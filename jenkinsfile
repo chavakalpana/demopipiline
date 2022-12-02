@@ -10,11 +10,10 @@ pipeline{
 
                 script{
 
-                    git branch: 'main', url: 'https://github.com/chavakalpana/demopipiline.git'
+                    git branch: 'main', url: 'https://github.com/chavakalpana/demopipiliie.git'
                 }
             }
         }
-}
 
 stage('UNIT testing'){
             
@@ -26,4 +25,17 @@ stage('UNIT testing'){
                 }
             }
         }
+
+ stage('Integration testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn verify -DskipUnitTests'
+                }
+            }
+        }
+   }
+
 }
